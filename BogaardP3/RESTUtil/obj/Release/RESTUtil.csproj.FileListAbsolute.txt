@@ -1,0 +1,5 @@
+C:\Users\student\Desktop\340-2185\BogaardP3\RESTUtil\bin\Release\RESTUtil.dll
+C:\Users\student\Desktop\340-2185\BogaardP3\RESTUtil\bin\Release\RESTUtil.pdb
+C:\Users\student\Desktop\340-2185\BogaardP3\RESTUtil\obj\Release\RESTUtil.csproj.CoreCompileInputs.cache
+C:\Users\student\Desktop\340-2185\BogaardP3\RESTUtil\obj\Release\RESTUtil.dll
+C:\Users\student\Desktop\340-2185\BogaardP3\RESTUtil\obj\Release\RESTUtil.pdb
