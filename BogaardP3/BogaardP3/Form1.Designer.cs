@@ -61,7 +61,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btn_people = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Minors = new System.Windows.Forms.TabPage();
             this.label20 = new System.Windows.Forms.Label();
@@ -83,6 +82,9 @@
             this.ResourcesTab = new System.Windows.Forms.TabPage();
             this.Map = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
+            this.peopleTab = new System.Windows.Forms.TabControl();
+            this.professorTabPage = new System.Windows.Forms.TabPage();
+            this.staffTabPage = new System.Windows.Forms.TabPage();
             this.aboutTab.SuspendLayout();
             this.empTab.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -99,6 +101,7 @@
             this.tabControl3.SuspendLayout();
             this.Research.SuspendLayout();
             this.tabControl4.SuspendLayout();
+            this.peopleTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -184,10 +187,10 @@
             this.tabControl2.Controls.Add(this.degreeStatic);
             this.tabControl2.Controls.Add(this.coopTable);
             this.tabControl2.Controls.Add(this.empTable);
-            this.tabControl2.Location = new System.Drawing.Point(3, 6);
+            this.tabControl2.Location = new System.Drawing.Point(-4, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(626, 289);
+            this.tabControl2.Size = new System.Drawing.Size(640, 305);
             this.tabControl2.TabIndex = 0;
             // 
             // degreeStatic
@@ -199,7 +202,7 @@
             this.degreeStatic.Location = new System.Drawing.Point(4, 22);
             this.degreeStatic.Name = "degreeStatic";
             this.degreeStatic.Padding = new System.Windows.Forms.Padding(3);
-            this.degreeStatic.Size = new System.Drawing.Size(618, 263);
+            this.degreeStatic.Size = new System.Drawing.Size(632, 279);
             this.degreeStatic.TabIndex = 2;
             this.degreeStatic.Text = "degreeStatic";
             this.degreeStatic.UseVisualStyleBackColor = true;
@@ -410,16 +413,16 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(2, 2);
+            this.listView1.Location = new System.Drawing.Point(-4, 2);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(630, 299);
+            this.listView1.Size = new System.Drawing.Size(640, 303);
             this.listView1.TabIndex = 6;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.btn_people);
+            this.tabPage1.Controls.Add(this.peopleTab);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -427,17 +430,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "People";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btn_people
-            // 
-            this.btn_people.Location = new System.Drawing.Point(0, 2);
-            this.btn_people.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_people.Name = "btn_people";
-            this.btn_people.Size = new System.Drawing.Size(72, 24);
-            this.btn_people.TabIndex = 3;
-            this.btn_people.Text = "Get People";
-            this.btn_people.UseVisualStyleBackColor = true;
-            this.btn_people.Click += new System.EventHandler(this.btn_people_Click);
             // 
             // tabControl1
             // 
@@ -578,10 +570,10 @@
             // 
             this.tabControl3.Controls.Add(this.undergraduate);
             this.tabControl3.Controls.Add(this.graduate);
-            this.tabControl3.Location = new System.Drawing.Point(0, 3);
+            this.tabControl3.Location = new System.Drawing.Point(-4, 0);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(632, 298);
+            this.tabControl3.Size = new System.Drawing.Size(640, 305);
             this.tabControl3.TabIndex = 0;
             // 
             // undergraduate
@@ -589,7 +581,7 @@
             this.undergraduate.Location = new System.Drawing.Point(4, 22);
             this.undergraduate.Name = "undergraduate";
             this.undergraduate.Padding = new System.Windows.Forms.Padding(3);
-            this.undergraduate.Size = new System.Drawing.Size(624, 272);
+            this.undergraduate.Size = new System.Drawing.Size(632, 279);
             this.undergraduate.TabIndex = 0;
             this.undergraduate.Text = "undergraduate";
             this.undergraduate.UseVisualStyleBackColor = true;
@@ -619,10 +611,10 @@
             // 
             this.tabControl4.Controls.Add(this.byInterestArea);
             this.tabControl4.Controls.Add(this.byFaculty);
-            this.tabControl4.Location = new System.Drawing.Point(0, 3);
+            this.tabControl4.Location = new System.Drawing.Point(-4, 0);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(632, 298);
+            this.tabControl4.Size = new System.Drawing.Size(640, 305);
             this.tabControl4.TabIndex = 0;
             // 
             // byInterestArea
@@ -630,7 +622,7 @@
             this.byInterestArea.Location = new System.Drawing.Point(4, 22);
             this.byInterestArea.Name = "byInterestArea";
             this.byInterestArea.Padding = new System.Windows.Forms.Padding(3);
-            this.byInterestArea.Size = new System.Drawing.Size(624, 272);
+            this.byInterestArea.Size = new System.Drawing.Size(632, 279);
             this.byInterestArea.TabIndex = 0;
             this.byInterestArea.Text = "byInterestArea";
             this.byInterestArea.UseVisualStyleBackColor = true;
@@ -675,6 +667,39 @@
             this.label3.Text = "Introduction";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // peopleTab
+            // 
+            this.peopleTab.Controls.Add(this.professorTabPage);
+            this.peopleTab.Controls.Add(this.staffTabPage);
+            this.peopleTab.Location = new System.Drawing.Point(-4, 0);
+            this.peopleTab.Name = "peopleTab";
+            this.peopleTab.SelectedIndex = 0;
+            this.peopleTab.Size = new System.Drawing.Size(640, 305);
+            this.peopleTab.TabIndex = 4;
+            this.peopleTab.Enter += new System.EventHandler(this.professorTabPage_Enter);
+            // 
+            // professorTabPage
+            // 
+            this.professorTabPage.Location = new System.Drawing.Point(4, 22);
+            this.professorTabPage.Name = "professorTabPage";
+            this.professorTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.professorTabPage.Size = new System.Drawing.Size(632, 279);
+            this.professorTabPage.TabIndex = 0;
+            this.professorTabPage.Text = "Professor";
+            this.professorTabPage.UseVisualStyleBackColor = true;
+            this.professorTabPage.Enter += new System.EventHandler(this.professorTabPage_Enter);
+            // 
+            // staffTabPage
+            // 
+            this.staffTabPage.Location = new System.Drawing.Point(4, 22);
+            this.staffTabPage.Name = "staffTabPage";
+            this.staffTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.staffTabPage.Size = new System.Drawing.Size(632, 279);
+            this.staffTabPage.TabIndex = 1;
+            this.staffTabPage.Text = "Staff";
+            this.staffTabPage.UseVisualStyleBackColor = true;
+            this.staffTabPage.Enter += new System.EventHandler(this.staffTabPage_Enter);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -704,6 +729,7 @@
             this.tabControl3.ResumeLayout(false);
             this.Research.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
+            this.peopleTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -733,7 +759,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btn_people;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -766,6 +791,9 @@
         private System.Windows.Forms.TabPage byFaculty;
         private System.Windows.Forms.TabPage ResourcesTab;
         private System.Windows.Forms.TabPage Map;
+        private System.Windows.Forms.TabControl peopleTab;
+        private System.Windows.Forms.TabPage professorTabPage;
+        private System.Windows.Forms.TabPage staffTabPage;
     }
 }
 

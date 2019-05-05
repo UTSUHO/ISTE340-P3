@@ -20,6 +20,9 @@ namespace BogaardP3
         //instantiate my rest classes
         REST rj = new REST("http://ist.rit.edu/api");
         REST googleRj = new REST("http://www.google.com/api");
+        int situationFac = 0;
+        int situationStaff = 0;
+
 
         //instantiate my data objects
         People people;
@@ -64,6 +67,9 @@ namespace BogaardP3
 
             string jsonFooter = rj.getRESTDataJSON("/footer/");
             footer = JToken.Parse(jsonFooter).ToObject<Footer>();
+
+            string jsonPeople = rj.getRESTDataJSON("/people/");
+            people = JToken.Parse(jsonPeople).ToObject<People>();
 
             linkLabel1.Text = footer.quickLinks[1].href;
 
@@ -115,47 +121,33 @@ namespace BogaardP3
             System.Diagnostics.Process.Start(me.Text);
         }
 
-        private void btn_people_Click(object sender, EventArgs e)
-        {
-            //get the json for people
-            string jsonPeople = rj.getRESTDataJSON("/people/");
-            people = JToken.Parse(jsonPeople).ToObject<People>();
-
-            //play with data
-            foreach(Faculty thisFac in people.faculty)
-            {
-                Console.WriteLine(thisFac.name);
-
-                Button dButton = new Button();
-                dButton.Text = thisFac.name;
-                dButton.Show();
-                dButton.Name = thisFac.username;            
-                dButton.Location = new Point(dButton.Location.X + 108, dButton.Location.Y + 48);
-                dButton.Visible = true;
-                tabPage1.Controls.Add(dButton);
-                dButton.Click += dButton_Click;
-//                FacStaff f2 = new FacStaff(thisFac);
-//                f2.Show();
-
-            }
-
-            //issue is how to find data on ONE ind
-            getSingleInstance("dsbics");
-
-        }
-
-        private void dButton_Click(object sender, EventArgs e)
-        {
-            Button myButton = sender as Button;
-            String buffer = myButton.Name;
-            foreach (Faculty thisFac in people.faculty)
-            {
-                if (thisFac.username==buffer) {
-                    FacStaff f2 = new FacStaff(thisFac);
-                    f2.Show();
-                }
-            }
-        }
+//        private void btn_people_Click(object sender, EventArgs e)
+//        {
+//            int lx = 108;
+//            int ly = 48;
+//            int counter = 0;
+//            situationFac = 1;
+//            //play with data
+//            foreach(Faculty thisFac in people.faculty)
+//            {
+//                Console.WriteLine(thisFac.name);
+//                Button dButton = new Button();
+//                dButton.Text = thisFac.name;
+//                dButton.Show();
+//                dButton.Name = thisFac.username;            
+//                dButton.Location = new Point(dButton.Location.X + lx, dButton.Location.Y + ly);
+//                lx += 108;
+//                ly += 48;
+//                counter ++;
+//                dButton.Visible = true;
+//                tabPage1.Controls.Add(dButton);
+//                dButton.Click += dButton_Click;
+////                FacStaff f2 = new FacStaff(thisFac);
+////                f2.Show();
+//            }
+//            //issue is how to find data on ONE ind
+//            getSingleInstance("dsbics");
+//        }
 
         private void getSingleInstance(string id)
         {
@@ -314,6 +306,130 @@ namespace BogaardP3
         private void label19_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void professorTabPage_Enter(object sender, EventArgs e)
+        {
+            if (situationFac == 0)
+            {
+                TabPage buffer = sender as TabPage;
+                int lx = 108;
+                int ly = 48;
+                int iy = 5;
+                int ix = 10;
+                int counter = 0;
+                //play with data
+                foreach (Faculty thisFac in people.faculty)
+                {
+                    //Console.WriteLine(thisFac.name);
+                    Button dButtonF = new Button();
+                    dButtonF.Text = thisFac.name;
+                    dButtonF.Show();
+                    dButtonF.Name = thisFac.username;
+                    if (counter == 0)
+                    {
+                        dButtonF.Location = new Point(ix, iy);
+                    }
+                    else
+                    {
+                        if (counter % 6 == 0)
+                        {
+                            iy += ly;
+                            ix = 10;
+                            lx = 108;
+                            dButtonF.Location = new Point(ix, iy);
+                        }
+                        else
+                        {
+                            dButtonF.Location = new Point(ix + lx, iy);
+                            lx += 108;
+                        }
+                    }
+                    counter++;
+                    dButtonF.Visible = true;
+                    professorTabPage.Controls.Add(dButtonF);
+                    dButtonF.Click += dButtonF_Click;
+                }
+                situationFac = 1;
+            }
+            //issue is how to find data on ONE ind
+            //getSingleInstance("dsbics");
+        }
+
+        private void staffTabPage_Enter(object sender, EventArgs e)
+        {
+            if (situationStaff == 0)
+            {
+                TabPage buffer = sender as TabPage;
+                int lx = 108;
+                int ly = 48;
+                int iy = 5;
+                int ix = 10;
+                int counter = 0;
+
+                //play with data
+                foreach (Staff thisStaff in people.staff)
+                {
+                    //Console.WriteLine(thisStaff.name);
+                    Button dButtonS = new Button();
+                    dButtonS.Text = thisStaff.name;
+                    dButtonS.Show();
+                    dButtonS.Name = thisStaff.username;
+                    if (counter == 0)
+                    {
+                        dButtonS.Location = new Point(ix, iy);
+                    }
+                    else
+                    {
+                        if (counter % 6 == 0)
+                        {
+                            iy += ly;
+                            ix = 10;
+                            lx = 108;
+                            dButtonS.Location = new Point(ix, iy);
+                        }
+                        else
+                        {
+                            dButtonS.Location = new Point(ix + lx, iy);
+                            lx += 108;
+                        }
+                    }
+                    counter++;
+                    dButtonS.Visible = true;
+                    staffTabPage.Controls.Add(dButtonS);
+                    dButtonS.Click += dButtonS_Click;
+                }
+                situationStaff = 1;
+                //issue is how to find data on ONE ind
+                //getSingleInstance("dsbics");
+            }
+        }
+        private void dButtonF_Click(object sender, EventArgs e)
+        {
+            Button myButton = sender as Button;
+            String buffer = myButton.Name;
+            foreach (Faculty thisFac in people.faculty)
+            {
+                if (thisFac.username == buffer)
+                {
+                    FacStaff f2 = new FacStaff(thisFac);
+                    f2.Show();
+                }
+            }
+        }
+
+        private void dButtonS_Click(object sender, EventArgs e)
+        {
+            Button myButton = sender as Button;
+            String buffer = myButton.Name;
+            foreach (Staff thisStaff in people.staff)
+            {
+                if (thisStaff.username == buffer)
+                {
+                    FacStaff f2 = new FacStaff(thisStaff);
+                    f2.Show();
+                }
+            }
         }
     }
     
