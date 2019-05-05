@@ -15,8 +15,10 @@ namespace BogaardP3
         UgMinor para;
         public MinorsForm(UgMinor me)
         {
+
             para = me;
             InitializeComponent();
+            this.Text = me.name;
 
         }
 
@@ -34,17 +36,23 @@ namespace BogaardP3
                 dataGridView1.Rows[i].Cells[0].Value =
                     para.courses[i];
             }
-        }
-        private void dataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-            {
-                string courseS = row.Cells[0].Value.ToString();
-                //constructor of courseForm
-                CourseForm cF = new CourseForm(courseS);
-                cF.Show();
+            dataGridView1.CellContentDoubleClick += dataGridView_CellContentDoubleClicked;
 
-            }
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AllowUserToDeleteRows = false;
+        }
+
+
+
+        private void dataGridView_CellContentDoubleClicked(object sender, EventArgs e)
+        {
+            
+            DataGridView buffer = sender as DataGridView;
+            //MessageBox.Show(buffer.CurrentCell.Value.ToString());
+            string courseS = buffer.CurrentCell.Value.ToString();
+            //constructor of courseForm
+            CourseForm cF = new CourseForm(courseS);
+            cF.Show();
         }
     }
 }

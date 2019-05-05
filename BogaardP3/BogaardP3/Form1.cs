@@ -146,7 +146,8 @@ namespace BogaardP3
 
         private void dButton_Click(object sender, EventArgs e)
         {
-            String buffer = this.Name;
+            Button myButton = sender as Button;
+            String buffer = myButton.Name;
             foreach (Faculty thisFac in people.faculty)
             {
                 if (thisFac.username==buffer) {
@@ -298,7 +299,8 @@ namespace BogaardP3
 
         private void Lab_Click(object sender, EventArgs e)
         {
-            String buffer = this.Text;
+            Label myButton = sender as Label;
+            String buffer = myButton.Text;
             foreach (UgMinor me in minors.UgMinors)
             {
                 if (me.name == buffer)
@@ -307,7 +309,6 @@ namespace BogaardP3
                     fM.Show();
                 }
             }
-            throw new NotImplementedException();
         }
 
         private void label19_Click(object sender, EventArgs e)

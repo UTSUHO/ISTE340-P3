@@ -72,17 +72,17 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.Degrees = new System.Windows.Forms.TabPage();
-            this.Research = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.undergraduate = new System.Windows.Forms.TabPage();
             this.graduate = new System.Windows.Forms.TabPage();
+            this.Research = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.byInterestArea = new System.Windows.Forms.TabPage();
             this.byFaculty = new System.Windows.Forms.TabPage();
             this.ResourcesTab = new System.Windows.Forms.TabPage();
             this.Map = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.aboutTab.SuspendLayout();
             this.empTab.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -96,8 +96,8 @@
             this.tabControl1.SuspendLayout();
             this.Minors.SuspendLayout();
             this.Degrees.SuspendLayout();
-            this.Research.SuspendLayout();
             this.tabControl3.SuspendLayout();
+            this.Research.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -284,6 +284,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.employer,
@@ -293,29 +294,35 @@
             this.dataGridView1.Location = new System.Drawing.Point(159, 38);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(454, 220);
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.Size = new System.Drawing.Size(440, 212);
             this.dataGridView1.TabIndex = 9;
             // 
             // employer
             // 
             this.employer.HeaderText = "Employer";
             this.employer.Name = "employer";
+            this.employer.ReadOnly = true;
             // 
             // degree
             // 
             this.degree.HeaderText = "Degree";
             this.degree.Name = "degree";
+            this.degree.ReadOnly = true;
             // 
             // city
             // 
             this.city.HeaderText = "City";
             this.city.Name = "city";
+            this.city.ReadOnly = true;
             // 
             // term
             // 
             this.term.HeaderText = "Term";
             this.term.Name = "term";
+            this.term.ReadOnly = true;
             // 
             // empTable
             // 
@@ -333,17 +340,17 @@
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(74, 90);
+            this.label12.Location = new System.Drawing.Point(53, 90);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(538, 19);
+            this.label12.Size = new System.Drawing.Size(516, 19);
             this.label12.TabIndex = 5;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(74, 19);
+            this.label11.Location = new System.Drawing.Point(53, 19);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(538, 71);
+            this.label11.Size = new System.Drawing.Size(516, 71);
             this.label11.TabIndex = 4;
             this.label11.Text = "label11";
             // 
@@ -359,7 +366,8 @@
             this.dataGridView2.Location = new System.Drawing.Point(52, 112);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(566, 145);
+            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView2.Size = new System.Drawing.Size(517, 134);
             this.dataGridView2.TabIndex = 3;
             // 
             // empEmployer
@@ -555,16 +563,6 @@
             this.label13.Text = "DBDDI-MN";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(125, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(522, 32);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Introduction";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // Degrees
             // 
             this.Degrees.Controls.Add(this.tabControl3);
@@ -575,17 +573,6 @@
             this.Degrees.TabIndex = 7;
             this.Degrees.Text = "Degrees";
             this.Degrees.UseVisualStyleBackColor = true;
-            // 
-            // Research
-            // 
-            this.Research.Controls.Add(this.tabControl4);
-            this.Research.Location = new System.Drawing.Point(4, 22);
-            this.Research.Name = "Research";
-            this.Research.Padding = new System.Windows.Forms.Padding(3);
-            this.Research.Size = new System.Drawing.Size(632, 301);
-            this.Research.TabIndex = 8;
-            this.Research.Text = "Research";
-            this.Research.UseVisualStyleBackColor = true;
             // 
             // tabControl3
             // 
@@ -616,6 +603,17 @@
             this.graduate.TabIndex = 1;
             this.graduate.Text = "graduate";
             this.graduate.UseVisualStyleBackColor = true;
+            // 
+            // Research
+            // 
+            this.Research.Controls.Add(this.tabControl4);
+            this.Research.Location = new System.Drawing.Point(4, 22);
+            this.Research.Name = "Research";
+            this.Research.Padding = new System.Windows.Forms.Padding(3);
+            this.Research.Size = new System.Drawing.Size(632, 301);
+            this.Research.TabIndex = 8;
+            this.Research.Text = "Research";
+            this.Research.UseVisualStyleBackColor = true;
             // 
             // tabControl4
             // 
@@ -667,6 +665,16 @@
             this.Map.Text = "Map";
             this.Map.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(125, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(522, 32);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Introduction";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -693,8 +701,8 @@
             this.tabControl1.ResumeLayout(false);
             this.Minors.ResumeLayout(false);
             this.Degrees.ResumeLayout(false);
-            this.Research.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
+            this.Research.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
