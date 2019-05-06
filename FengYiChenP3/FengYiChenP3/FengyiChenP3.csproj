@@ -97,12 +97,6 @@
       <DependentUpon>ResearchForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources.cs" />
-    <Compile Include="ResourcesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ResourcesForm.Designer.cs">
-      <DependentUpon>ResourcesForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CourseForm.resx">
       <DependentUpon>CourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,9 +123,6 @@
     </Compile>
     <EmbeddedResource Include="ResearchForm.resx">
       <DependentUpon>ResearchForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ResourcesForm.resx">
-      <DependentUpon>ResourcesForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

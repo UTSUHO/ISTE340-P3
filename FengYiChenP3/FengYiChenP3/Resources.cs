@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -137,50 +136,5 @@ namespace BogaardP3
         public StudentAmbassadors studentAmbassadors { get; set; }
         public Forms forms { get; set; }
         public CoopEnrollment coopEnrollment { get; set; }
-
-        
-        
     }
-    //Enumerator
-    //public class ResourcesInfo : IEnumerable
-    //{
-    //    public Resources[] resources;
-    //    public ResourcesInfo(Resources[] resources)
-    //    {
-    //        this.resources = new Resources[resources.Length];
-    //        for (int i = 0; i < resources.Length; i++)
-    //        {
-    //            this.resources[i] = resources[i];
-
-    //        }
-    //    }
-    //    IEnumerator IEnumerable.GetEnumerator(){
-    //        for (int i = 0; i < resources.Length; i++)
-    //        {
-    //            yield return resources[i];
-    //        }
-    //    }
-    //}
-    //class ResourcesIEnumerator : IEnumerator {
-    //    private int position = -1;
-    //    private ResourcesInfo resourcesInfo;
-    //    public ResourcesIEnumerator(ResourcesInfo info) {
-    //        this.resourcesInfo = info;
-    //    }
-    //    public object Current {
-    //        get {
-    //            return resourcesInfo.resources[position];
-    //            throw new NotImplementedException();
-    //        }
-    //    }
-    //    public bool MoveNext() {
-    //        position++;
-    //        return position < resourcesInfo.resources.Length;
-    //        throw new NotImplementedException();
-    //    }
-    //    public void Reset() {
-    //        position = -1; throw new NotImplementedException();
-    //    }
-    //}
-
 }
