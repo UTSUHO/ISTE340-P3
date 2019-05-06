@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BogaardP3", "BogaardP3\BogaardP3.csproj", "{71921D5F-C23D-48E3-8BB8-0A8784B00A3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FengyiChenP3", "BogaardP3\FengyiChenP3.csproj", "{71921D5F-C23D-48E3-8BB8-0A8784B00A3D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTUtil", "RESTUtil\RESTUtil.csproj", "{68F997EC-A4CF-4F0C-B8E7-D53D3F7D4BF3}"
 EndProject

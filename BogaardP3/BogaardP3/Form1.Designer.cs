@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btn_LV = new System.Windows.Forms.Button();
-            this.aboutTab = new System.Windows.Forms.TabPage();
+            this.aboutPage = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.empTab = new System.Windows.Forms.TabPage();
@@ -60,9 +60,12 @@
             this.empStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.peoplePage = new System.Windows.Forms.TabPage();
+            this.peopleTab = new System.Windows.Forms.TabControl();
+            this.facultyTabPage = new System.Windows.Forms.TabPage();
+            this.staffTabPage = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Minors = new System.Windows.Forms.TabPage();
+            this.minorsPage = new System.Windows.Forms.TabPage();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -71,21 +74,35 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.Degrees = new System.Windows.Forms.TabPage();
+            this.degreesPage = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.undergraduate = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.graduate = new System.Windows.Forms.TabPage();
-            this.Research = new System.Windows.Forms.TabPage();
+            this.researchPage = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.byInterestArea = new System.Windows.Forms.TabPage();
             this.byFaculty = new System.Windows.Forms.TabPage();
-            this.ResourcesTab = new System.Windows.Forms.TabPage();
-            this.Map = new System.Windows.Forms.TabPage();
+            this.resourcesPage = new System.Windows.Forms.TabPage();
+            this.mapPage = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
-            this.peopleTab = new System.Windows.Forms.TabControl();
-            this.professorTabPage = new System.Windows.Forms.TabPage();
-            this.staffTabPage = new System.Windows.Forms.TabPage();
-            this.aboutTab.SuspendLayout();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.aboutPage.SuspendLayout();
             this.empTab.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.degreeStatic.SuspendLayout();
@@ -94,14 +111,17 @@
             this.empTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.Minors.SuspendLayout();
-            this.Degrees.SuspendLayout();
-            this.tabControl3.SuspendLayout();
-            this.Research.SuspendLayout();
-            this.tabControl4.SuspendLayout();
+            this.peoplePage.SuspendLayout();
             this.peopleTab.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.minorsPage.SuspendLayout();
+            this.degreesPage.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.undergraduate.SuspendLayout();
+            this.graduate.SuspendLayout();
+            this.researchPage.SuspendLayout();
+            this.tabControl4.SuspendLayout();
+            this.byInterestArea.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -136,18 +156,18 @@
             this.btn_LV.Text = "Get ListView";
             this.btn_LV.UseVisualStyleBackColor = true;
             // 
-            // aboutTab
+            // aboutPage
             // 
-            this.aboutTab.Controls.Add(this.label4);
-            this.aboutTab.Controls.Add(this.label2);
-            this.aboutTab.Controls.Add(this.label1);
-            this.aboutTab.Location = new System.Drawing.Point(4, 22);
-            this.aboutTab.Name = "aboutTab";
-            this.aboutTab.Padding = new System.Windows.Forms.Padding(3);
-            this.aboutTab.Size = new System.Drawing.Size(632, 301);
-            this.aboutTab.TabIndex = 5;
-            this.aboutTab.Text = "About";
-            this.aboutTab.UseVisualStyleBackColor = true;
+            this.aboutPage.Controls.Add(this.label4);
+            this.aboutPage.Controls.Add(this.label2);
+            this.aboutPage.Controls.Add(this.label1);
+            this.aboutPage.Location = new System.Drawing.Point(4, 22);
+            this.aboutPage.Name = "aboutPage";
+            this.aboutPage.Padding = new System.Windows.Forms.Padding(3);
+            this.aboutPage.Size = new System.Drawing.Size(632, 301);
+            this.aboutPage.TabIndex = 5;
+            this.aboutPage.Text = "About";
+            this.aboutPage.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -264,7 +284,7 @@
             this.coopTable.Location = new System.Drawing.Point(4, 22);
             this.coopTable.Name = "coopTable";
             this.coopTable.Padding = new System.Windows.Forms.Padding(3);
-            this.coopTable.Size = new System.Drawing.Size(618, 263);
+            this.coopTable.Size = new System.Drawing.Size(632, 279);
             this.coopTable.TabIndex = 0;
             this.coopTable.Text = "coopTable";
             this.coopTable.UseVisualStyleBackColor = true;
@@ -335,7 +355,7 @@
             this.empTable.Location = new System.Drawing.Point(4, 22);
             this.empTable.Name = "empTable";
             this.empTable.Padding = new System.Windows.Forms.Padding(3);
-            this.empTable.Size = new System.Drawing.Size(618, 263);
+            this.empTable.Size = new System.Drawing.Size(632, 279);
             this.empTable.TabIndex = 1;
             this.empTable.Text = "empTable";
             this.empTable.UseVisualStyleBackColor = true;
@@ -420,52 +440,83 @@
             this.listView1.TabIndex = 6;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // tabPage1
+            // peoplePage
             // 
-            this.tabPage1.Controls.Add(this.peopleTab);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(632, 301);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "People";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.peoplePage.Controls.Add(this.peopleTab);
+            this.peoplePage.Location = new System.Drawing.Point(4, 22);
+            this.peoplePage.Name = "peoplePage";
+            this.peoplePage.Padding = new System.Windows.Forms.Padding(3);
+            this.peoplePage.Size = new System.Drawing.Size(632, 301);
+            this.peoplePage.TabIndex = 0;
+            this.peoplePage.Text = "People";
+            this.peoplePage.UseVisualStyleBackColor = true;
+            // 
+            // peopleTab
+            // 
+            this.peopleTab.Controls.Add(this.facultyTabPage);
+            this.peopleTab.Controls.Add(this.staffTabPage);
+            this.peopleTab.Location = new System.Drawing.Point(-4, 0);
+            this.peopleTab.Name = "peopleTab";
+            this.peopleTab.SelectedIndex = 0;
+            this.peopleTab.Size = new System.Drawing.Size(640, 305);
+            this.peopleTab.TabIndex = 4;
+            // 
+            // facultyTabPage
+            // 
+            this.facultyTabPage.Location = new System.Drawing.Point(4, 22);
+            this.facultyTabPage.Name = "facultyTabPage";
+            this.facultyTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.facultyTabPage.Size = new System.Drawing.Size(632, 279);
+            this.facultyTabPage.TabIndex = 0;
+            this.facultyTabPage.Text = "Faculty";
+            this.facultyTabPage.UseVisualStyleBackColor = true;
+            // 
+            // staffTabPage
+            // 
+            this.staffTabPage.Location = new System.Drawing.Point(4, 22);
+            this.staffTabPage.Name = "staffTabPage";
+            this.staffTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.staffTabPage.Size = new System.Drawing.Size(632, 279);
+            this.staffTabPage.TabIndex = 1;
+            this.staffTabPage.Text = "Staff";
+            this.staffTabPage.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.aboutTab);
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.aboutPage);
+            this.tabControl1.Controls.Add(this.peoplePage);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.empTab);
-            this.tabControl1.Controls.Add(this.Minors);
-            this.tabControl1.Controls.Add(this.Degrees);
-            this.tabControl1.Controls.Add(this.Research);
-            this.tabControl1.Controls.Add(this.ResourcesTab);
-            this.tabControl1.Controls.Add(this.Map);
+            this.tabControl1.Controls.Add(this.minorsPage);
+            this.tabControl1.Controls.Add(this.degreesPage);
+            this.tabControl1.Controls.Add(this.researchPage);
+            this.tabControl1.Controls.Add(this.resourcesPage);
+            this.tabControl1.Controls.Add(this.mapPage);
             this.tabControl1.Location = new System.Drawing.Point(67, 111);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(640, 327);
             this.tabControl1.TabIndex = 9;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // Minors
+            // minorsPage
             // 
-            this.Minors.Controls.Add(this.label20);
-            this.Minors.Controls.Add(this.label19);
-            this.Minors.Controls.Add(this.label18);
-            this.Minors.Controls.Add(this.label17);
-            this.Minors.Controls.Add(this.label16);
-            this.Minors.Controls.Add(this.label15);
-            this.Minors.Controls.Add(this.label14);
-            this.Minors.Controls.Add(this.label13);
-            this.Minors.Location = new System.Drawing.Point(4, 22);
-            this.Minors.Name = "Minors";
-            this.Minors.Padding = new System.Windows.Forms.Padding(3);
-            this.Minors.Size = new System.Drawing.Size(632, 301);
-            this.Minors.TabIndex = 6;
-            this.Minors.Text = "Minors";
-            this.Minors.UseVisualStyleBackColor = true;
-            this.Minors.Enter += new System.EventHandler(this.Minors_Enter);
+            this.minorsPage.Controls.Add(this.label20);
+            this.minorsPage.Controls.Add(this.label19);
+            this.minorsPage.Controls.Add(this.label18);
+            this.minorsPage.Controls.Add(this.label17);
+            this.minorsPage.Controls.Add(this.label16);
+            this.minorsPage.Controls.Add(this.label15);
+            this.minorsPage.Controls.Add(this.label14);
+            this.minorsPage.Controls.Add(this.label13);
+            this.minorsPage.Location = new System.Drawing.Point(4, 22);
+            this.minorsPage.Name = "minorsPage";
+            this.minorsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.minorsPage.Size = new System.Drawing.Size(632, 301);
+            this.minorsPage.TabIndex = 6;
+            this.minorsPage.Text = "Minors";
+            this.minorsPage.UseVisualStyleBackColor = true;
+            this.minorsPage.Enter += new System.EventHandler(this.Minors_Enter);
             // 
             // label20
             // 
@@ -475,7 +526,7 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(120, 120);
             this.label20.TabIndex = 7;
-            this.label20.Text = "WEBD-MN";
+            this.label20.Text = "Web Development (WEBD-MN)";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label19
@@ -486,7 +537,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(120, 120);
             this.label19.TabIndex = 6;
-            this.label19.Text = "WEBDD-MN";
+            this.label19.Text = "Web Design & Development (WEBDD-MN)";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
@@ -497,7 +548,7 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(120, 120);
             this.label18.TabIndex = 5;
-            this.label18.Text = "NETSYS-MN";
+            this.label18.Text = "Networking and System Administration (NETSYS-MN)";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label17
@@ -508,7 +559,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(120, 120);
             this.label17.TabIndex = 4;
-            this.label17.Text = "MDEV-MN";
+            this.label17.Text = "Mobile Development (MDEV-MN)";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label16
@@ -519,7 +570,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(120, 120);
             this.label16.TabIndex = 3;
-            this.label16.Text = "MDDEV-MN";
+            this.label16.Text = "Mobile Design & Development (MDDEV-MN)";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
@@ -530,7 +581,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(120, 120);
             this.label15.TabIndex = 2;
-            this.label15.Text = "MEDINFO-MN";
+            this.label15.Text = "Health IT (MEDINFO-MN)";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
@@ -541,7 +592,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(120, 120);
             this.label14.TabIndex = 1;
-            this.label14.Text = "GIS-MN";
+            this.label14.Text = "Geographic Information Systems Minor (GIS-MN)";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
@@ -552,19 +603,19 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(120, 120);
             this.label13.TabIndex = 0;
-            this.label13.Text = "DBDDI-MN";
+            this.label13.Text = "Database Design, Development, and Implementation (DBDDI-MN)";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Degrees
+            // degreesPage
             // 
-            this.Degrees.Controls.Add(this.tabControl3);
-            this.Degrees.Location = new System.Drawing.Point(4, 22);
-            this.Degrees.Name = "Degrees";
-            this.Degrees.Padding = new System.Windows.Forms.Padding(3);
-            this.Degrees.Size = new System.Drawing.Size(632, 301);
-            this.Degrees.TabIndex = 7;
-            this.Degrees.Text = "Degrees";
-            this.Degrees.UseVisualStyleBackColor = true;
+            this.degreesPage.Controls.Add(this.tabControl3);
+            this.degreesPage.Location = new System.Drawing.Point(4, 22);
+            this.degreesPage.Name = "degreesPage";
+            this.degreesPage.Padding = new System.Windows.Forms.Padding(3);
+            this.degreesPage.Size = new System.Drawing.Size(632, 301);
+            this.degreesPage.TabIndex = 7;
+            this.degreesPage.Text = "Degrees";
+            this.degreesPage.UseVisualStyleBackColor = true;
             // 
             // tabControl3
             // 
@@ -578,6 +629,9 @@
             // 
             // undergraduate
             // 
+            this.undergraduate.Controls.Add(this.label23);
+            this.undergraduate.Controls.Add(this.label22);
+            this.undergraduate.Controls.Add(this.label21);
             this.undergraduate.Location = new System.Drawing.Point(4, 22);
             this.undergraduate.Name = "undergraduate";
             this.undergraduate.Padding = new System.Windows.Forms.Padding(3);
@@ -586,26 +640,63 @@
             this.undergraduate.Text = "undergraduate";
             this.undergraduate.UseVisualStyleBackColor = true;
             // 
+            // label23
+            // 
+            this.label23.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(426, 64);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(150, 150);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Computing & Information Technologies, B.S.";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            this.label22.BackColor = System.Drawing.Color.Yellow;
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(243, 64);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(150, 150);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Human Centered Computing, B.S.";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.Tomato;
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(58, 64);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(150, 150);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Web & Mobile Computing, B.S.";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // graduate
             // 
+            this.graduate.Controls.Add(this.label27);
+            this.graduate.Controls.Add(this.label24);
+            this.graduate.Controls.Add(this.label25);
+            this.graduate.Controls.Add(this.label26);
             this.graduate.Location = new System.Drawing.Point(4, 22);
             this.graduate.Name = "graduate";
             this.graduate.Padding = new System.Windows.Forms.Padding(3);
-            this.graduate.Size = new System.Drawing.Size(624, 272);
+            this.graduate.Size = new System.Drawing.Size(632, 279);
             this.graduate.TabIndex = 1;
             this.graduate.Text = "graduate";
             this.graduate.UseVisualStyleBackColor = true;
             // 
-            // Research
+            // researchPage
             // 
-            this.Research.Controls.Add(this.tabControl4);
-            this.Research.Location = new System.Drawing.Point(4, 22);
-            this.Research.Name = "Research";
-            this.Research.Padding = new System.Windows.Forms.Padding(3);
-            this.Research.Size = new System.Drawing.Size(632, 301);
-            this.Research.TabIndex = 8;
-            this.Research.Text = "Research";
-            this.Research.UseVisualStyleBackColor = true;
+            this.researchPage.Controls.Add(this.tabControl4);
+            this.researchPage.Location = new System.Drawing.Point(4, 22);
+            this.researchPage.Name = "researchPage";
+            this.researchPage.Padding = new System.Windows.Forms.Padding(3);
+            this.researchPage.Size = new System.Drawing.Size(632, 301);
+            this.researchPage.TabIndex = 8;
+            this.researchPage.Text = "Research";
+            this.researchPage.UseVisualStyleBackColor = true;
             // 
             // tabControl4
             // 
@@ -619,6 +710,16 @@
             // 
             // byInterestArea
             // 
+            this.byInterestArea.Controls.Add(this.label37);
+            this.byInterestArea.Controls.Add(this.label36);
+            this.byInterestArea.Controls.Add(this.label28);
+            this.byInterestArea.Controls.Add(this.label29);
+            this.byInterestArea.Controls.Add(this.label30);
+            this.byInterestArea.Controls.Add(this.label31);
+            this.byInterestArea.Controls.Add(this.label32);
+            this.byInterestArea.Controls.Add(this.label33);
+            this.byInterestArea.Controls.Add(this.label34);
+            this.byInterestArea.Controls.Add(this.label35);
             this.byInterestArea.Location = new System.Drawing.Point(4, 22);
             this.byInterestArea.Name = "byInterestArea";
             this.byInterestArea.Padding = new System.Windows.Forms.Padding(3);
@@ -632,30 +733,30 @@
             this.byFaculty.Location = new System.Drawing.Point(4, 22);
             this.byFaculty.Name = "byFaculty";
             this.byFaculty.Padding = new System.Windows.Forms.Padding(3);
-            this.byFaculty.Size = new System.Drawing.Size(624, 272);
+            this.byFaculty.Size = new System.Drawing.Size(632, 279);
             this.byFaculty.TabIndex = 1;
             this.byFaculty.Text = "byFaculty";
             this.byFaculty.UseVisualStyleBackColor = true;
             // 
-            // ResourcesTab
+            // resourcesPage
             // 
-            this.ResourcesTab.Location = new System.Drawing.Point(4, 22);
-            this.ResourcesTab.Name = "ResourcesTab";
-            this.ResourcesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ResourcesTab.Size = new System.Drawing.Size(632, 301);
-            this.ResourcesTab.TabIndex = 9;
-            this.ResourcesTab.Text = "Resources";
-            this.ResourcesTab.UseVisualStyleBackColor = true;
+            this.resourcesPage.Location = new System.Drawing.Point(4, 22);
+            this.resourcesPage.Name = "resourcesPage";
+            this.resourcesPage.Padding = new System.Windows.Forms.Padding(3);
+            this.resourcesPage.Size = new System.Drawing.Size(632, 301);
+            this.resourcesPage.TabIndex = 9;
+            this.resourcesPage.Text = "Resources";
+            this.resourcesPage.UseVisualStyleBackColor = true;
             // 
-            // Map
+            // mapPage
             // 
-            this.Map.Location = new System.Drawing.Point(4, 22);
-            this.Map.Name = "Map";
-            this.Map.Padding = new System.Windows.Forms.Padding(3);
-            this.Map.Size = new System.Drawing.Size(632, 301);
-            this.Map.TabIndex = 10;
-            this.Map.Text = "Map";
-            this.Map.UseVisualStyleBackColor = true;
+            this.mapPage.Location = new System.Drawing.Point(4, 22);
+            this.mapPage.Name = "mapPage";
+            this.mapPage.Padding = new System.Windows.Forms.Padding(3);
+            this.mapPage.Size = new System.Drawing.Size(632, 301);
+            this.mapPage.TabIndex = 10;
+            this.mapPage.Text = "Map";
+            this.mapPage.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -667,38 +768,159 @@
             this.label3.Text = "Introduction";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // peopleTab
+            // label24
             // 
-            this.peopleTab.Controls.Add(this.professorTabPage);
-            this.peopleTab.Controls.Add(this.staffTabPage);
-            this.peopleTab.Location = new System.Drawing.Point(-4, 0);
-            this.peopleTab.Name = "peopleTab";
-            this.peopleTab.SelectedIndex = 0;
-            this.peopleTab.Size = new System.Drawing.Size(640, 305);
-            this.peopleTab.TabIndex = 4;
-            this.peopleTab.Enter += new System.EventHandler(this.professorTabPage_Enter);
+            this.label24.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(426, 17);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(150, 150);
+            this.label24.TabIndex = 5;
+            this.label24.Text = "Networking & Systems Administration, M.S.";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // professorTabPage
+            // label25
             // 
-            this.professorTabPage.Location = new System.Drawing.Point(4, 22);
-            this.professorTabPage.Name = "professorTabPage";
-            this.professorTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.professorTabPage.Size = new System.Drawing.Size(632, 279);
-            this.professorTabPage.TabIndex = 0;
-            this.professorTabPage.Text = "Professor";
-            this.professorTabPage.UseVisualStyleBackColor = true;
-            this.professorTabPage.Enter += new System.EventHandler(this.professorTabPage_Enter);
+            this.label25.BackColor = System.Drawing.Color.Yellow;
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(243, 17);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(150, 150);
+            this.label25.TabIndex = 4;
+            this.label25.Text = "Human Computer Interaction, M.S.";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // staffTabPage
+            // label26
             // 
-            this.staffTabPage.Location = new System.Drawing.Point(4, 22);
-            this.staffTabPage.Name = "staffTabPage";
-            this.staffTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.staffTabPage.Size = new System.Drawing.Size(632, 279);
-            this.staffTabPage.TabIndex = 1;
-            this.staffTabPage.Text = "Staff";
-            this.staffTabPage.UseVisualStyleBackColor = true;
-            this.staffTabPage.Enter += new System.EventHandler(this.staffTabPage_Enter);
+            this.label26.BackColor = System.Drawing.Color.Tomato;
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(60, 17);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(150, 150);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "Information Sciences & Technologies, M.S.";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            this.label27.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(58, 192);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(516, 84);
+            this.label27.TabIndex = 6;
+            this.label27.Text = "graduate advanced certificates";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.Maroon;
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(370, 153);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(100, 100);
+            this.label28.TabIndex = 15;
+            this.label28.Text = "Web Development (WEBD-MN)";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.BackColor = System.Drawing.Color.Maroon;
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(264, 153);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(100, 100);
+            this.label29.TabIndex = 14;
+            this.label29.Text = "Web Design & Development (WEBDD-MN)";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.BackColor = System.Drawing.Color.Maroon;
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(158, 153);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(100, 100);
+            this.label30.TabIndex = 13;
+            this.label30.Text = "Networking and System Administration (NETSYS-MN)";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            this.label31.BackColor = System.Drawing.Color.Maroon;
+            this.label31.ForeColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(52, 153);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(100, 100);
+            this.label31.TabIndex = 12;
+            this.label31.Text = "Mobile Development (MDEV-MN)";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            this.label32.BackColor = System.Drawing.Color.Maroon;
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(370, 28);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(100, 100);
+            this.label32.TabIndex = 11;
+            this.label32.Text = "Mobile Design & Development (MDDEV-MN)";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            this.label33.BackColor = System.Drawing.Color.Maroon;
+            this.label33.ForeColor = System.Drawing.Color.White;
+            this.label33.Location = new System.Drawing.Point(264, 28);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(100, 100);
+            this.label33.TabIndex = 10;
+            this.label33.Text = "Health IT (MEDINFO-MN)";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            this.label34.BackColor = System.Drawing.Color.Maroon;
+            this.label34.ForeColor = System.Drawing.Color.White;
+            this.label34.Location = new System.Drawing.Point(158, 28);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(100, 100);
+            this.label34.TabIndex = 9;
+            this.label34.Text = "Geographic Information Systems Minor (GIS-MN)";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label35
+            // 
+            this.label35.BackColor = System.Drawing.Color.Maroon;
+            this.label35.ForeColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(52, 28);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(100, 100);
+            this.label35.TabIndex = 8;
+            this.label35.Text = "Database Design, Development, and Implementation (DBDDI-MN)";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            this.label36.BackColor = System.Drawing.Color.Maroon;
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(476, 28);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(100, 100);
+            this.label36.TabIndex = 16;
+            this.label36.Text = "Mobile Design & Development (MDDEV-MN)";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label37
+            // 
+            this.label37.BackColor = System.Drawing.Color.Maroon;
+            this.label37.ForeColor = System.Drawing.Color.White;
+            this.label37.Location = new System.Drawing.Point(476, 153);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(100, 100);
+            this.label37.TabIndex = 17;
+            this.label37.Text = "Mobile Design & Development (MDDEV-MN)";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -713,7 +935,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.aboutTab.ResumeLayout(false);
+            this.aboutPage.ResumeLayout(false);
             this.empTab.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.degreeStatic.ResumeLayout(false);
@@ -722,14 +944,17 @@
             this.empTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.Minors.ResumeLayout(false);
-            this.Degrees.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
-            this.Research.ResumeLayout(false);
-            this.tabControl4.ResumeLayout(false);
+            this.peoplePage.ResumeLayout(false);
             this.peopleTab.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.minorsPage.ResumeLayout(false);
+            this.degreesPage.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.undergraduate.ResumeLayout(false);
+            this.graduate.ResumeLayout(false);
+            this.researchPage.ResumeLayout(false);
+            this.tabControl4.ResumeLayout(false);
+            this.byInterestArea.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -740,7 +965,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btn_LV;
-        private System.Windows.Forms.TabPage aboutTab;
+        private System.Windows.Forms.TabPage aboutPage;
         private System.Windows.Forms.TabPage empTab;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage coopTable;
@@ -758,7 +983,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn empStartDate;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage peoplePage;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -772,7 +997,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TabPage Minors;
+        private System.Windows.Forms.TabPage minorsPage;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
@@ -781,19 +1006,36 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TabPage Degrees;
+        private System.Windows.Forms.TabPage degreesPage;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage undergraduate;
         private System.Windows.Forms.TabPage graduate;
-        private System.Windows.Forms.TabPage Research;
+        private System.Windows.Forms.TabPage researchPage;
         private System.Windows.Forms.TabControl tabControl4;
         private System.Windows.Forms.TabPage byInterestArea;
         private System.Windows.Forms.TabPage byFaculty;
-        private System.Windows.Forms.TabPage ResourcesTab;
-        private System.Windows.Forms.TabPage Map;
+        private System.Windows.Forms.TabPage resourcesPage;
+        private System.Windows.Forms.TabPage mapPage;
         private System.Windows.Forms.TabControl peopleTab;
-        private System.Windows.Forms.TabPage professorTabPage;
+        private System.Windows.Forms.TabPage facultyTabPage;
         private System.Windows.Forms.TabPage staffTabPage;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
     }
 }
 

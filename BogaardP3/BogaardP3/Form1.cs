@@ -31,6 +31,8 @@ namespace BogaardP3
         Employment employment;
         Minors minors;
         Footer footer;
+        Degrees degrees;
+        Research research;
         Stopwatch sw = new Stopwatch();
 
         public Form1()
@@ -54,6 +56,7 @@ namespace BogaardP3
             label2.Text = (" -- -- " + about.quoteAuthor);
             label3.Text = about.title;
             Console.WriteLine(about.quoteAuthor);
+
             string jsonResources = rj.getRESTDataJSON("/resources/");
             resources = JToken.Parse(jsonResources).ToObject<Resources>();
             //populate the linkLabel with the RITJobZoneLink!
@@ -70,6 +73,12 @@ namespace BogaardP3
 
             string jsonPeople = rj.getRESTDataJSON("/people/");
             people = JToken.Parse(jsonPeople).ToObject<People>();
+
+            string jsonDegrees = rj.getRESTDataJSON("/degrees/");
+            degrees = JToken.Parse(jsonDegrees).ToObject<Degrees>();
+
+            string jsonResearch = rj.getRESTDataJSON("/research/");
+            research = JToken.Parse(jsonResearch).ToObject<Research>();
 
             linkLabel1.Text = footer.quickLinks[1].href;
 
@@ -120,34 +129,6 @@ namespace BogaardP3
             //open the browser
             System.Diagnostics.Process.Start(me.Text);
         }
-
-//        private void btn_people_Click(object sender, EventArgs e)
-//        {
-//            int lx = 108;
-//            int ly = 48;
-//            int counter = 0;
-//            situationFac = 1;
-//            //play with data
-//            foreach(Faculty thisFac in people.faculty)
-//            {
-//                Console.WriteLine(thisFac.name);
-//                Button dButton = new Button();
-//                dButton.Text = thisFac.name;
-//                dButton.Show();
-//                dButton.Name = thisFac.username;            
-//                dButton.Location = new Point(dButton.Location.X + lx, dButton.Location.Y + ly);
-//                lx += 108;
-//                ly += 48;
-//                counter ++;
-//                dButton.Visible = true;
-//                tabPage1.Controls.Add(dButton);
-//                dButton.Click += dButton_Click;
-////                FacStaff f2 = new FacStaff(thisFac);
-////                f2.Show();
-//            }
-//            //issue is how to find data on ONE ind
-//            getSingleInstance("dsbics");
-//        }
 
         private void getSingleInstance(string id)
         {
@@ -278,132 +259,159 @@ namespace BogaardP3
         private void Minors_Enter(object sender, EventArgs e)
         {
             foreach (UgMinor me in minors.UgMinors) { 
-                foreach (Label lab in Minors.Controls)
+                foreach (Label lab in minorsPage.Controls)
                 {
-                    if (me.name == lab.Text)
+                    
+                    if (me.title == lab.Text)
                     {
-                        lab.Click += Lab_Click;
+                        lab.Click += LabS_Click;
                     }
                 }
             }
-            Console.WriteLine("WTF");
         }
 
-        private void Lab_Click(object sender, EventArgs e)
+        private void LabS_Click(object sender, EventArgs e)
         {
             Label myButton = sender as Label;
             String buffer = myButton.Text;
             foreach (UgMinor me in minors.UgMinors)
             {
-                if (me.name == buffer)
+                if (me.title == buffer)
                 {
                     MinorsForm fM = new MinorsForm(me);
                     fM.Show();
                 }
             }
         }
-
-        private void label19_Click(object sender, EventArgs e)
+        private void LabD_Click(object sender, EventArgs e)
         {
-
+            Label myButton = sender as Label;
+            String buffer = myButton.Text;
+            foreach (Undergraduate me in degrees.Undergraduate)
+            {
+                if (me.title == buffer)
+                {
+                    DegreesForm fD = new DegreesForm(me);
+                    fD.Show();
+                }
+            }
+            foreach (Graduate me in degrees.Graduate)
+            {
+                if (me.title == buffer)
+                {
+                    DegreesForm fD = new DegreesForm(me);
+                    fD.Show();
+                }
+                else if (me.degreeName == buffer)
+                {
+                    DegreesForm fD = new DegreesForm(me);
+                    fD.Show();
+                }
+            }
         }
 
-        private void professorTabPage_Enter(object sender, EventArgs e)
+        
+
+        //preloading function of staff/fac
+
+        /*
+    private void professorTabPage_Enter(object sender, EventArgs e)
+    {
+        if (situationFac == 0)
         {
-            if (situationFac == 0)
+            //TabPage buffer = sender as TabPage;
+            int lx = 108;
+            int ly = 48;
+            int iy = 5;
+            int ix = 10;
+            int counter = 0;
+            //play with data
+            foreach (Faculty thisFac in people.faculty)
             {
-                TabPage buffer = sender as TabPage;
-                int lx = 108;
-                int ly = 48;
-                int iy = 5;
-                int ix = 10;
-                int counter = 0;
-                //play with data
-                foreach (Faculty thisFac in people.faculty)
+                //Console.WriteLine(thisFac.name);
+                Button dButtonF = new Button();
+                dButtonF.Text = thisFac.name;
+                dButtonF.Show();
+                dButtonF.Name = thisFac.username;
+                if (counter == 0)
                 {
-                    //Console.WriteLine(thisFac.name);
-                    Button dButtonF = new Button();
-                    dButtonF.Text = thisFac.name;
-                    dButtonF.Show();
-                    dButtonF.Name = thisFac.username;
-                    if (counter == 0)
+                    dButtonF.Location = new Point(ix, iy);
+                }
+                else
+                {
+                    if (counter % 6 == 0)
                     {
+                        iy += ly;
+                        ix = 10;
+                        lx = 108;
                         dButtonF.Location = new Point(ix, iy);
                     }
                     else
                     {
-                        if (counter % 6 == 0)
-                        {
-                            iy += ly;
-                            ix = 10;
-                            lx = 108;
-                            dButtonF.Location = new Point(ix, iy);
-                        }
-                        else
-                        {
-                            dButtonF.Location = new Point(ix + lx, iy);
-                            lx += 108;
-                        }
+                        dButtonF.Location = new Point(ix + lx, iy);
+                        lx += 108;
                     }
-                    counter++;
-                    dButtonF.Visible = true;
-                    professorTabPage.Controls.Add(dButtonF);
-                    dButtonF.Click += dButtonF_Click;
                 }
-                situationFac = 1;
+                counter++;
+                dButtonF.Visible = true;
+                facultyTabPage.Controls.Add(dButtonF);
+                dButtonF.Click += dButtonF_Click;
             }
-            //issue is how to find data on ONE ind
-            //getSingleInstance("dsbics");
+            situationFac = 1;
         }
+        //issue is how to find data on ONE ind
+        //getSingleInstance("dsbics");
+    }
 
-        private void staffTabPage_Enter(object sender, EventArgs e)
+    private void staffTabPage_Enter(object sender, EventArgs e)
+    {
+        if (situationStaff == 0)
         {
-            if (situationStaff == 0)
-            {
-                TabPage buffer = sender as TabPage;
-                int lx = 108;
-                int ly = 48;
-                int iy = 5;
-                int ix = 10;
-                int counter = 0;
+            //TabPage buffer = sender as TabPage;
+            int lx = 108;
+            int ly = 48;
+            int iy = 5;
+            int ix = 10;
+            int counter = 0;
 
-                //play with data
-                foreach (Staff thisStaff in people.staff)
+            //play with data
+            foreach (Staff thisStaff in people.staff)
+            {
+                //Console.WriteLine(thisStaff.name);
+                Button dButtonS = new Button();
+                dButtonS.Text = thisStaff.name;
+                dButtonS.Show();
+                dButtonS.Name = thisStaff.username;
+                if (counter == 0)
                 {
-                    //Console.WriteLine(thisStaff.name);
-                    Button dButtonS = new Button();
-                    dButtonS.Text = thisStaff.name;
-                    dButtonS.Show();
-                    dButtonS.Name = thisStaff.username;
-                    if (counter == 0)
+                    dButtonS.Location = new Point(ix, iy);
+                }
+                else
+                {
+                    if (counter % 6 == 0)
                     {
+                        iy += ly;
+                        ix = 10;
+                        lx = 108;
                         dButtonS.Location = new Point(ix, iy);
                     }
                     else
                     {
-                        if (counter % 6 == 0)
-                        {
-                            iy += ly;
-                            ix = 10;
-                            lx = 108;
-                            dButtonS.Location = new Point(ix, iy);
-                        }
-                        else
-                        {
-                            dButtonS.Location = new Point(ix + lx, iy);
-                            lx += 108;
-                        }
+                        dButtonS.Location = new Point(ix + lx, iy);
+                        lx += 108;
                     }
-                    counter++;
-                    dButtonS.Visible = true;
-                    staffTabPage.Controls.Add(dButtonS);
-                    dButtonS.Click += dButtonS_Click;
                 }
-                situationStaff = 1;
-                //issue is how to find data on ONE ind
-                //getSingleInstance("dsbics");
+                counter++;
+                dButtonS.Visible = true;
+                staffTabPage.Controls.Add(dButtonS);
+                dButtonS.Click += dButtonS_Click;
             }
+            situationStaff = 1;
+            //issue is how to find data on ONE ind
+            //getSingleInstance("dsbics");
         }
+    }
+    */
         private void dButtonF_Click(object sender, EventArgs e)
         {
             Button myButton = sender as Button;
@@ -429,6 +437,128 @@ namespace BogaardP3
                     FacStaff f2 = new FacStaff(thisStaff);
                     f2.Show();
                 }
+            }
+        }
+
+        //refactor method of staff/fac preload function
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab.Name == "peoplePage")
+            {
+                if (situationFac == 0)
+                {
+                    int lx = 108;
+                    int ly = 48;
+                    int iy = 5;
+                    int ix = 10;
+                    int counter = 0;
+                    //play with data
+                    foreach (Faculty thisFac in people.faculty)
+                    {
+                        //Console.WriteLine(thisFac.name);
+                        Button dButtonF = new Button();
+                        dButtonF.Text = thisFac.name;
+                        dButtonF.Show();
+                        dButtonF.Name = thisFac.username;
+                        if (counter == 0)
+                        {
+                            dButtonF.Location = new Point(ix, iy);
+                        }
+                        else
+                        {
+                            if (counter % 6 == 0)
+                            {
+                                iy += ly;
+                                ix = 10;
+                                lx = 108;
+                                dButtonF.Location = new Point(ix, iy);
+                            }
+                            else
+                            {
+                                dButtonF.Location = new Point(ix + lx, iy);
+                                lx += 108;
+                            }
+                        }
+                        counter++;
+                        dButtonF.Visible = true;
+                        facultyTabPage.Controls.Add(dButtonF);
+                        dButtonF.Click += dButtonF_Click;
+                    }
+                    situationFac = 1;
+                }
+                if (situationStaff == 0)
+                {
+                    int lx = 108;
+                    int ly = 48;
+                    int iy = 5;
+                    int ix = 10;
+                    int counter = 0;
+
+                    //play with data
+                    foreach (Staff thisStaff in people.staff)
+                    {
+                        //Console.WriteLine(thisStaff.name);
+                        Button dButtonS = new Button();
+                        dButtonS.Text = thisStaff.name;
+                        dButtonS.Show();
+                        dButtonS.Name = thisStaff.username;
+                        if (counter == 0)
+                        {
+                            dButtonS.Location = new Point(ix, iy);
+                        }
+                        else
+                        {
+                            if (counter % 6 == 0)
+                            {
+                                iy += ly;
+                                ix = 10;
+                                lx = 108;
+                                dButtonS.Location = new Point(ix, iy);
+                            }
+                            else
+                            {
+                                dButtonS.Location = new Point(ix + lx, iy);
+                                lx += 108;
+                            }
+                        }
+                        counter++;
+                        dButtonS.Visible = true;
+                        staffTabPage.Controls.Add(dButtonS);
+                        dButtonS.Click += dButtonS_Click;
+                    }
+                    situationStaff = 1;
+                    //issue is how to find data on ONE ind
+                    //getSingleInstance("dsbics");
+                }
+            }
+            if (tabControl1.SelectedTab.Name == "degreesPage")
+            {
+                foreach (Undergraduate me in degrees.Undergraduate)
+                {
+                    foreach (Label lab in undergraduate.Controls)
+                    {
+
+                        if (me.title == lab.Text)
+                        {
+                            lab.Click += LabD_Click;
+                        }
+                    }
+                }
+                foreach (Graduate me in degrees.Graduate)
+                {
+                    foreach (Label lab in graduate.Controls)
+                    { 
+                        if (me.title == lab.Text)
+                        {
+                            lab.Click += LabD_Click;
+                        }
+                        else if (me.degreeName == lab.Text)
+                        {
+                            lab.Click += LabD_Click;
+                        }
+                    }
+                }
+                
             }
         }
     }

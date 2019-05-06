@@ -25,7 +25,7 @@ namespace BogaardP3
 
     public class Degrees
     {
-        public List<Undergraduate> undergraduate { get; set; }
-        public List<Graduate> graduate { get; set; }
+        public List<Undergraduate> Undergraduate { get; set; }
+        public List<Graduate> Graduate { get; set; }
     }
 }

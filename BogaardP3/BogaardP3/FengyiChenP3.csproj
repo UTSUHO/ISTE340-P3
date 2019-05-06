@@ -58,11 +58,11 @@
       <DependentUpon>CourseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Degrees.cs" />
-    <Compile Include="degreesForm.cs">
+    <Compile Include="DegreesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="degreesForm.Designer.cs">
-      <DependentUpon>degreesForm.cs</DependentUpon>
+    <Compile Include="DegreesForm.Designer.cs">
+      <DependentUpon>DegreesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Employment.cs" />
     <Compile Include="FacStaff.cs">
@@ -94,8 +94,8 @@
     <EmbeddedResource Include="CourseForm.resx">
       <DependentUpon>CourseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="degreesForm.resx">
-      <DependentUpon>degreesForm.cs</DependentUpon>
+    <EmbeddedResource Include="DegreesForm.resx">
+      <DependentUpon>DegreesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacStaff.resx">
       <DependentUpon>FacStaff.cs</DependentUpon>
