@@ -81,17 +81,18 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.graduate = new System.Windows.Forms.TabPage();
-            this.researchPage = new System.Windows.Forms.TabPage();
-            this.tabControl4 = new System.Windows.Forms.TabControl();
-            this.byInterestArea = new System.Windows.Forms.TabPage();
-            this.byFaculty = new System.Windows.Forms.TabPage();
-            this.resourcesPage = new System.Windows.Forms.TabPage();
-            this.mapPage = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
+            this.researchPage = new System.Windows.Forms.TabPage();
+            this.resourcesPage = new System.Windows.Forms.TabPage();
+            this.mapPage = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -100,8 +101,6 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
             this.aboutPage.SuspendLayout();
             this.empTab.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -120,8 +119,6 @@
             this.undergraduate.SuspendLayout();
             this.graduate.SuspendLayout();
             this.researchPage.SuspendLayout();
-            this.tabControl4.SuspendLayout();
-            this.byInterestArea.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -687,86 +684,16 @@
             this.graduate.Text = "graduate";
             this.graduate.UseVisualStyleBackColor = true;
             // 
-            // researchPage
+            // label27
             // 
-            this.researchPage.Controls.Add(this.tabControl4);
-            this.researchPage.Location = new System.Drawing.Point(4, 22);
-            this.researchPage.Name = "researchPage";
-            this.researchPage.Padding = new System.Windows.Forms.Padding(3);
-            this.researchPage.Size = new System.Drawing.Size(632, 301);
-            this.researchPage.TabIndex = 8;
-            this.researchPage.Text = "Research";
-            this.researchPage.UseVisualStyleBackColor = true;
-            // 
-            // tabControl4
-            // 
-            this.tabControl4.Controls.Add(this.byInterestArea);
-            this.tabControl4.Controls.Add(this.byFaculty);
-            this.tabControl4.Location = new System.Drawing.Point(-4, 0);
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(640, 305);
-            this.tabControl4.TabIndex = 0;
-            // 
-            // byInterestArea
-            // 
-            this.byInterestArea.Controls.Add(this.label37);
-            this.byInterestArea.Controls.Add(this.label36);
-            this.byInterestArea.Controls.Add(this.label28);
-            this.byInterestArea.Controls.Add(this.label29);
-            this.byInterestArea.Controls.Add(this.label30);
-            this.byInterestArea.Controls.Add(this.label31);
-            this.byInterestArea.Controls.Add(this.label32);
-            this.byInterestArea.Controls.Add(this.label33);
-            this.byInterestArea.Controls.Add(this.label34);
-            this.byInterestArea.Controls.Add(this.label35);
-            this.byInterestArea.Location = new System.Drawing.Point(4, 22);
-            this.byInterestArea.Name = "byInterestArea";
-            this.byInterestArea.Padding = new System.Windows.Forms.Padding(3);
-            this.byInterestArea.Size = new System.Drawing.Size(632, 279);
-            this.byInterestArea.TabIndex = 0;
-            this.byInterestArea.Text = "byInterestArea";
-            this.byInterestArea.UseVisualStyleBackColor = true;
-            // 
-            // byFaculty
-            // 
-            this.byFaculty.Location = new System.Drawing.Point(4, 22);
-            this.byFaculty.Name = "byFaculty";
-            this.byFaculty.Padding = new System.Windows.Forms.Padding(3);
-            this.byFaculty.Size = new System.Drawing.Size(632, 279);
-            this.byFaculty.TabIndex = 1;
-            this.byFaculty.Text = "byFaculty";
-            this.byFaculty.UseVisualStyleBackColor = true;
-            // 
-            // resourcesPage
-            // 
-            this.resourcesPage.Location = new System.Drawing.Point(4, 22);
-            this.resourcesPage.Name = "resourcesPage";
-            this.resourcesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.resourcesPage.Size = new System.Drawing.Size(632, 301);
-            this.resourcesPage.TabIndex = 9;
-            this.resourcesPage.Text = "Resources";
-            this.resourcesPage.UseVisualStyleBackColor = true;
-            // 
-            // mapPage
-            // 
-            this.mapPage.Location = new System.Drawing.Point(4, 22);
-            this.mapPage.Name = "mapPage";
-            this.mapPage.Padding = new System.Windows.Forms.Padding(3);
-            this.mapPage.Size = new System.Drawing.Size(632, 301);
-            this.mapPage.TabIndex = 10;
-            this.mapPage.Text = "Map";
-            this.mapPage.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(125, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(522, 32);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Introduction";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label27.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(58, 192);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(516, 84);
+            this.label27.TabIndex = 6;
+            this.label27.Text = "graduate advanced certificates";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label24
             // 
@@ -801,126 +728,189 @@
             this.label26.Text = "Information Sciences & Technologies, M.S.";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label27
+            // researchPage
             // 
-            this.label27.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(58, 192);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(516, 84);
-            this.label27.TabIndex = 6;
-            this.label27.Text = "graduate advanced certificates";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.researchPage.Controls.Add(this.label39);
+            this.researchPage.Controls.Add(this.label38);
+            this.researchPage.Controls.Add(this.label37);
+            this.researchPage.Controls.Add(this.label36);
+            this.researchPage.Controls.Add(this.label28);
+            this.researchPage.Controls.Add(this.label29);
+            this.researchPage.Controls.Add(this.label30);
+            this.researchPage.Controls.Add(this.label31);
+            this.researchPage.Controls.Add(this.label32);
+            this.researchPage.Controls.Add(this.label33);
+            this.researchPage.Controls.Add(this.label34);
+            this.researchPage.Controls.Add(this.label35);
+            this.researchPage.Location = new System.Drawing.Point(4, 22);
+            this.researchPage.Name = "researchPage";
+            this.researchPage.Padding = new System.Windows.Forms.Padding(3);
+            this.researchPage.Size = new System.Drawing.Size(632, 301);
+            this.researchPage.TabIndex = 8;
+            this.researchPage.Text = "Research";
+            this.researchPage.UseVisualStyleBackColor = true;
+            // 
+            // resourcesPage
+            // 
+            this.resourcesPage.Location = new System.Drawing.Point(4, 22);
+            this.resourcesPage.Name = "resourcesPage";
+            this.resourcesPage.Padding = new System.Windows.Forms.Padding(3);
+            this.resourcesPage.Size = new System.Drawing.Size(632, 301);
+            this.resourcesPage.TabIndex = 9;
+            this.resourcesPage.Text = "Resources";
+            this.resourcesPage.UseVisualStyleBackColor = true;
+            // 
+            // mapPage
+            // 
+            this.mapPage.Location = new System.Drawing.Point(4, 22);
+            this.mapPage.Name = "mapPage";
+            this.mapPage.Padding = new System.Windows.Forms.Padding(3);
+            this.mapPage.Size = new System.Drawing.Size(632, 301);
+            this.mapPage.TabIndex = 10;
+            this.mapPage.Text = "Map";
+            this.mapPage.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(125, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(522, 32);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Introduction";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label39
+            // 
+            this.label39.BackColor = System.Drawing.Color.Maroon;
+            this.label39.ForeColor = System.Drawing.Color.White;
+            this.label39.Location = new System.Drawing.Point(435, 110);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(80, 80);
+            this.label39.TabIndex = 31;
+            this.label39.Text = "Networking";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label38
+            // 
+            this.label38.BackColor = System.Drawing.Color.Maroon;
+            this.label38.ForeColor = System.Drawing.Color.White;
+            this.label38.Location = new System.Drawing.Point(329, 110);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(80, 80);
+            this.label38.TabIndex = 30;
+            this.label38.Text = "Mobile";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label37
+            // 
+            this.label37.BackColor = System.Drawing.Color.Maroon;
+            this.label37.ForeColor = System.Drawing.Color.White;
+            this.label37.Location = new System.Drawing.Point(117, 110);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(80, 80);
+            this.label37.TabIndex = 29;
+            this.label37.Text = "HCI";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            this.label36.BackColor = System.Drawing.Color.Maroon;
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.Location = new System.Drawing.Point(223, 110);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(80, 80);
+            this.label36.TabIndex = 28;
+            this.label36.Text = "Health Informatics";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label28
             // 
             this.label28.BackColor = System.Drawing.Color.Maroon;
             this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(370, 153);
+            this.label28.Location = new System.Drawing.Point(435, 196);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(100, 100);
-            this.label28.TabIndex = 15;
-            this.label28.Text = "Web Development (WEBD-MN)";
+            this.label28.Size = new System.Drawing.Size(80, 80);
+            this.label28.TabIndex = 27;
+            this.label28.Text = "Web";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label29
             // 
             this.label29.BackColor = System.Drawing.Color.Maroon;
             this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(264, 153);
+            this.label29.Location = new System.Drawing.Point(329, 196);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(100, 100);
-            this.label29.TabIndex = 14;
-            this.label29.Text = "Web Design & Development (WEBDD-MN)";
+            this.label29.Size = new System.Drawing.Size(80, 80);
+            this.label29.TabIndex = 26;
+            this.label29.Text = "Ubiquitous Computing";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label30
             // 
             this.label30.BackColor = System.Drawing.Color.Maroon;
             this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(158, 153);
+            this.label30.Location = new System.Drawing.Point(223, 196);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(100, 100);
-            this.label30.TabIndex = 13;
-            this.label30.Text = "Networking and System Administration (NETSYS-MN)";
+            this.label30.Size = new System.Drawing.Size(80, 80);
+            this.label30.TabIndex = 25;
+            this.label30.Text = "System Administration";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label31
             // 
             this.label31.BackColor = System.Drawing.Color.Maroon;
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(52, 153);
+            this.label31.Location = new System.Drawing.Point(117, 196);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(100, 100);
-            this.label31.TabIndex = 12;
-            this.label31.Text = "Mobile Development (MDEV-MN)";
+            this.label31.Size = new System.Drawing.Size(80, 80);
+            this.label31.TabIndex = 24;
+            this.label31.Text = "Programming";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label32
             // 
             this.label32.BackColor = System.Drawing.Color.Maroon;
             this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(370, 28);
+            this.label32.Location = new System.Drawing.Point(435, 24);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(100, 100);
-            this.label32.TabIndex = 11;
-            this.label32.Text = "Mobile Design & Development (MDDEV-MN)";
+            this.label32.Size = new System.Drawing.Size(80, 80);
+            this.label32.TabIndex = 23;
+            this.label32.Text = "Geo";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label33
             // 
             this.label33.BackColor = System.Drawing.Color.Maroon;
             this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(264, 28);
+            this.label33.Location = new System.Drawing.Point(329, 24);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(100, 100);
-            this.label33.TabIndex = 10;
-            this.label33.Text = "Health IT (MEDINFO-MN)";
+            this.label33.Size = new System.Drawing.Size(80, 80);
+            this.label33.TabIndex = 22;
+            this.label33.Text = "Education";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
             // 
             this.label34.BackColor = System.Drawing.Color.Maroon;
             this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(158, 28);
+            this.label34.Location = new System.Drawing.Point(223, 24);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(100, 100);
-            this.label34.TabIndex = 9;
-            this.label34.Text = "Geographic Information Systems Minor (GIS-MN)";
+            this.label34.Size = new System.Drawing.Size(80, 80);
+            this.label34.TabIndex = 21;
+            this.label34.Text = "Database";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label35
             // 
             this.label35.BackColor = System.Drawing.Color.Maroon;
             this.label35.ForeColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(52, 28);
+            this.label35.Location = new System.Drawing.Point(117, 24);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(100, 100);
-            this.label35.TabIndex = 8;
-            this.label35.Text = "Database Design, Development, and Implementation (DBDDI-MN)";
+            this.label35.Size = new System.Drawing.Size(80, 80);
+            this.label35.TabIndex = 20;
+            this.label35.Text = "Analytics";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label36
-            // 
-            this.label36.BackColor = System.Drawing.Color.Maroon;
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(476, 28);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(100, 100);
-            this.label36.TabIndex = 16;
-            this.label36.Text = "Mobile Design & Development (MDDEV-MN)";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label37
-            // 
-            this.label37.BackColor = System.Drawing.Color.Maroon;
-            this.label37.ForeColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(476, 153);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(100, 100);
-            this.label37.TabIndex = 17;
-            this.label37.Text = "Mobile Design & Development (MDDEV-MN)";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -953,8 +943,6 @@
             this.undergraduate.ResumeLayout(false);
             this.graduate.ResumeLayout(false);
             this.researchPage.ResumeLayout(false);
-            this.tabControl4.ResumeLayout(false);
-            this.byInterestArea.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1011,9 +999,6 @@
         private System.Windows.Forms.TabPage undergraduate;
         private System.Windows.Forms.TabPage graduate;
         private System.Windows.Forms.TabPage researchPage;
-        private System.Windows.Forms.TabControl tabControl4;
-        private System.Windows.Forms.TabPage byInterestArea;
-        private System.Windows.Forms.TabPage byFaculty;
         private System.Windows.Forms.TabPage resourcesPage;
         private System.Windows.Forms.TabPage mapPage;
         private System.Windows.Forms.TabControl peopleTab;
@@ -1026,6 +1011,8 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label28;

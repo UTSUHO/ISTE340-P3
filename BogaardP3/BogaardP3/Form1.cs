@@ -309,8 +309,21 @@ namespace BogaardP3
                 }
             }
         }
+        private void LabR_Click(object sender, EventArgs e)
+        {
+            Label myButton = sender as Label;
+            String buffer = myButton.Text;
+            foreach (ByInterestArea me in research.byInterestArea)
+            {
+                if (me.areaName == buffer)
+                {
+                    ResearchForm fR = new ResearchForm(me);
+                    fR.Show();
+                }
+            }
+        }
 
-        
+
 
         //preloading function of staff/fac
 
@@ -559,6 +572,20 @@ namespace BogaardP3
                     }
                 }
                 
+            }
+            if (tabControl1.SelectedTab.Name == "researchPage")
+            {
+                foreach (ByInterestArea me in research.byInterestArea)
+                {
+                    foreach (Label lab in researchPage.Controls)
+                    {
+
+                        if (me.areaName == lab.Text)
+                        {
+                            lab.Click += LabR_Click;
+                        }
+                    }
+                }
             }
         }
     }

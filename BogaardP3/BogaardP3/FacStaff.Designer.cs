@@ -38,6 +38,7 @@
             this.website = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Citation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,11 +130,22 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Website: ";
             // 
+            // Citation
+            // 
+            this.Citation.Location = new System.Drawing.Point(12, 270);
+            this.Citation.Name = "Citation";
+            this.Citation.Size = new System.Drawing.Size(75, 23);
+            this.Citation.TabIndex = 12;
+            this.Citation.Text = "Citation";
+            this.Citation.UseVisualStyleBackColor = true;
+            this.Citation.Click += new System.EventHandler(this.citation_Click);
+            // 
             // FacStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 323);
+            this.Controls.Add(this.Citation);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.email);
             this.Controls.Add(this.website);
@@ -144,7 +156,7 @@
             this.Controls.Add(this.iA);
             this.Controls.Add(this.name);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FacStaff";
             this.Text = "FacStaff";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -165,5 +177,6 @@
         private System.Windows.Forms.Label website;
         private System.Windows.Forms.Label email;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Citation;
     }
 }

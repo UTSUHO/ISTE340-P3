@@ -15,3 +15,5 @@ C:\Users\cfy19\Documents\GitHub\ISTE340-P3\BogaardP3\BogaardP3\obj\Debug\FengyiC
 C:\Users\cfy19\Documents\GitHub\ISTE340-P3\BogaardP3\BogaardP3\obj\Debug\FengyiChenP3.csproj.CopyComplete
 C:\Users\cfy19\Documents\GitHub\ISTE340-P3\BogaardP3\BogaardP3\obj\Debug\BogaardP3.exe
 C:\Users\cfy19\Documents\GitHub\ISTE340-P3\BogaardP3\BogaardP3\obj\Debug\BogaardP3.pdb
+C:\Users\cfy19\Documents\GitHub\ISTE340-P3\BogaardP3\BogaardP3\obj\Debug\FengyiChenP3.csprojAssemblyReference.cache
+C:\Users\cfy19\Documents\GitHub\ISTE340-P3\BogaardP3\BogaardP3\obj\Debug\BogaardP3.ResearchForm.resources

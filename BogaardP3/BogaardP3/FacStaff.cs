@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using RESTUtil;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,16 @@ namespace BogaardP3
 {
     public partial class FacStaff : Form
     {
+        REST rj = new REST("http://ist.rit.edu/api");
+        Research research;
+        String facName;
         public FacStaff(Faculty me)
         {
-            this.Text = me.name;
+            facName = me.username;
+            
+            string jsonResearch = rj.getRESTDataJSON("/research/");
+            research = JToken.Parse(jsonResearch).ToObject<Research>();
+
             InitializeComponent();
             pictureBox1.Load(me.imagePath);
             name.Text += me.name;
@@ -25,12 +34,14 @@ namespace BogaardP3
             phone.Text += me.phone;
             email.Text += me.email;
             website.Text += me.website;
+            this.Text = me.name;
 
         }
 
+
         public FacStaff(Staff me)
         {
-            this.Text = me.name;
+            
             InitializeComponent();
             pictureBox1.Load(me.imagePath);
             name.Text += me.name;
@@ -41,6 +52,17 @@ namespace BogaardP3
             phone.Text += me.phone;
             email.Text += me.email;
             website.Text += me.website;
+            this.Text = me.name;
+            this.Controls.Remove(Citation);
+        }
+        private void citation_Click(object sender, EventArgs e)
+        {
+            foreach (ByFaculty thisFac in research.byFaculty) {
+                if (facName == thisFac.username) {
+                    ResearchForm fR = new ResearchForm(thisFac);
+                    fR.Show();
+                }
+            }
         }
     }
 }
