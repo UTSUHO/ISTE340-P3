@@ -33,6 +33,7 @@ namespace BogaardP3
         Footer footer;
         Degrees degrees;
         Research research;
+        News news;
         Stopwatch sw = new Stopwatch();
 
         public Form1()
@@ -60,7 +61,7 @@ namespace BogaardP3
             string jsonResources = rj.getRESTDataJSON("/resources/");
             resources = JToken.Parse(jsonResources).ToObject<Resources>();
             //populate the linkLabel with the RITJobZoneLink!
-            
+
 
             string jsonEmp = rj.getRESTDataJSON("/employment/");
             employment = JToken.Parse(jsonEmp).ToObject<Employment>();
@@ -80,8 +81,12 @@ namespace BogaardP3
             string jsonResearch = rj.getRESTDataJSON("/research/");
             research = JToken.Parse(jsonResearch).ToObject<Research>();
 
-            linkLabel1.Text = footer.quickLinks[1].href;
+            string jsonNews = rj.getRESTDataJSON("/news/");
+            news = JToken.Parse(jsonNews).ToObject<News>();
 
+            linkLabel1.Text = footer.quickLinks[0].href;
+            linkLabel2.Text = "http://ist.rit.edu/api/contactForm.php";
+            linkLabel3.Text = footer.quickLinks[1].href;
             /*imageine that I have a bunch of tabs(like an admin) that the entire
             application needs, but specific users don't - how do we handle that?
 
@@ -104,19 +109,19 @@ namespace BogaardP3
 
             //how do I dynamically create one a new tab?
 
-            TabPage myNewTab = new TabPage("News");
-            tabControl1.TabPages.Add(myNewTab);
+            //TabPage myNewTab = new TabPage("News");
+            //tabControl1.TabPages.Add(myNewTab);
 
-            TextBox tb = new TextBox();
-            tb.BackColor = SystemColors.HotTrack;
-            tb.Location = new Point(10, 10);
-            tb.Size = new Size(180, 30);
-            tb.TabIndex = 1;
-            myNewTab.Controls.Add(tb);
+            //TextBox tb = new TextBox();
+            //tb.BackColor = SystemColors.HotTrack;
+            //tb.Location = new Point(10, 10);
+            //tb.Size = new Size(180, 30);
+            //tb.TabIndex = 1;
+            //myNewTab.Controls.Add(tb);
         }
 
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //go and load the pdf!
             //which url do I need?  We can get it from sender!
@@ -136,7 +141,7 @@ namespace BogaardP3
             Console.WriteLine(result.office);
 
             //useful
-            List<Faculty> res = people.faculty.FindAll(x => x.title=="Associate Professor");
+            List<Faculty> res = people.faculty.FindAll(x => x.title == "Associate Professor");
             Console.WriteLine(res[2].name);
         }
 
@@ -145,17 +150,18 @@ namespace BogaardP3
             //sw.Reset();
             //sw.Start();
             label5.Text = employment.introduction.content[1].description;
-            foreach (String me in employment.careers.careerNames) {
+            foreach (String me in employment.careers.careerNames)
+            {
 
                 label6.Text += me;
-                    }
+            }
             //creare the dataGridView contents!
-            for (int i=0;i<employment.coopTable.coopInformation.Count;i++)
+            for (int i = 0; i < employment.coopTable.coopInformation.Count; i++)
             {
                 //build a row, add it
                 dataGridView1.Rows.Add();
                 //add things to the row
-                dataGridView1.Rows[i].Cells[0].Value = 
+                dataGridView1.Rows[i].Cells[0].Value =
                     employment.coopTable.coopInformation[i].employer;
                 dataGridView1.Rows[i].Cells[1].Value =
                     employment.coopTable.coopInformation[i].degree;
@@ -247,7 +253,7 @@ namespace BogaardP3
         private void degreeStatic_Enter(object sender, EventArgs e)
         {
             label7.Text = employment.degreeStatistics.statistics[0].value;
-            label7.Text += ("\r\r"+employment.degreeStatistics.statistics[0].description);
+            label7.Text += ("\r\r" + employment.degreeStatistics.statistics[0].description);
             label8.Text = employment.degreeStatistics.statistics[1].value;
             label8.Text += ("\r\r" + employment.degreeStatistics.statistics[1].description);
             label9.Text = employment.degreeStatistics.statistics[2].value;
@@ -258,10 +264,11 @@ namespace BogaardP3
 
         private void Minors_Enter(object sender, EventArgs e)
         {
-            foreach (UgMinor me in minors.UgMinors) { 
+            foreach (UgMinor me in minors.UgMinors)
+            {
                 foreach (Label lab in minorsPage.Controls)
                 {
-                    
+
                     if (me.title == lab.Text)
                     {
                         lab.Click += LabS_Click;
@@ -321,6 +328,40 @@ namespace BogaardP3
                     fR.Show();
                 }
             }
+        }
+        private void LabRe_Click(object sender, EventArgs e)
+        {
+            Label myButton = sender as Label;
+            String lab = myButton.Name;
+            String buffer = "";
+            if (lab == "studyAbroad")
+            {
+                buffer = resources.studyAbroad.GetType().Name;
+
+            }
+            else if (lab == "studentServices")
+            {
+                buffer = resources.studentServices.GetType().Name;
+            }
+            else if (lab == "tutorsAndLabInformation")
+            {
+                buffer = resources.tutorsAndLabInformation.GetType().Name;
+            }
+            else if (lab == "studentAmbassadors")
+            {
+                buffer = resources.studentAmbassadors.GetType().Name;
+            }
+            else if (lab == "forms")
+            {
+                buffer = resources.forms.GetType().Name;
+            }
+            else if (lab == "coopEnrollment")
+            {
+                buffer = resources.coopEnrollment.GetType().Name;
+            }
+            ResourcesForm fRe = new ResourcesForm(resources, buffer);
+            fRe.Show();
+
         }
 
 
@@ -456,6 +497,7 @@ namespace BogaardP3
         //refactor method of staff/fac preload function
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            String buffer;
             if (tabControl1.SelectedTab.Name == "peoplePage")
             {
                 if (situationFac == 0)
@@ -560,7 +602,7 @@ namespace BogaardP3
                 foreach (Graduate me in degrees.Graduate)
                 {
                     foreach (Label lab in graduate.Controls)
-                    { 
+                    {
                         if (me.title == lab.Text)
                         {
                             lab.Click += LabD_Click;
@@ -571,7 +613,7 @@ namespace BogaardP3
                         }
                     }
                 }
-                
+
             }
             if (tabControl1.SelectedTab.Name == "researchPage")
             {
@@ -586,6 +628,52 @@ namespace BogaardP3
                         }
                     }
                 }
+            }
+            if (tabControl1.SelectedTab.Name == "resourcesPage")
+            {
+
+                foreach (Label lab in resourcesPage.Controls)
+                {
+                    switch (lab.Name)
+                    {
+                        case "studyAbroad":
+                            buffer = resources.studyAbroad.GetType().Name;
+                            lab.Click += LabRe_Click;
+                            break;
+                        case "studentServices":
+                            buffer = resources.studentServices.GetType().Name;
+                            lab.Click += LabRe_Click;
+                            break;
+                        case "tutorsAndLabInformation":
+                            buffer = resources.tutorsAndLabInformation.GetType().Name;
+                            lab.Click += LabRe_Click;
+                            break;
+                        case "studentAmbassadors":
+                            buffer = resources.studentAmbassadors.GetType().Name;
+                            lab.Click += LabRe_Click;
+                            break;
+                        case "forms":
+                            buffer = resources.forms.GetType().Name;
+                            lab.Click += LabRe_Click;
+                            break;
+                        case "coopEnrollment":
+                            buffer = resources.coopEnrollment.GetType().Name;
+                            lab.Click += LabRe_Click;
+                            break;
+                    }
+
+                }
+
+            }
+
+            if (tabControl1.SelectedTab.Name == "newsPage")
+            {
+                Random ran = new Random();
+
+                int n = ran.Next(0, 107);
+                label40.Text = news.older[n].title;
+                label41.Text = news.older[n].date;
+                label42.Text = news.older[n].description;
             }
         }
     }
